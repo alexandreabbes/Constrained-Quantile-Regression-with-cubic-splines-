@@ -4,7 +4,7 @@ These codes use some ordinary python libraries, (numpy and scipy).
 It also needs **cvxpy**, that has to be specificaly downloaded.
 
 ===========================================================
-File name                                         Description
+File name ======================================== Description
 ===========================================================
 SplineCubicQuantBspkn3_V2_OK.py		  ===========	  python version of the quantile regression with cubic splines under constraints (monotone and convex). A simple test is provided.
 
