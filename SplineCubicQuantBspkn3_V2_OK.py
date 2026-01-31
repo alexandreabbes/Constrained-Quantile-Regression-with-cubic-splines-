@@ -45,7 +45,6 @@ def build_bsplines_and_deriv(knots,degree=3):
     DPi2 = np.zeros((N, 3,kn )) 
     
     con_array = np.zeros((kn+1, N))
-    Der3_array= np.zeros(kn,N) # one value per inter-knot
     for j in range(N):  
         coefs = np.zeros(N)
         coefs[j] = 1
@@ -54,7 +53,7 @@ def build_bsplines_and_deriv(knots,degree=3):
         List_Bsplines.append(spline_j)
 
         spline_j_der2=spline_j.derivative(2) 
-        spline_j_der3=pp
+        
         con_array[:, j] = spline_j_der2(knots)
         
     for nu in range(3,N):
@@ -90,8 +89,8 @@ def build_bsplines_and_deriv(knots,degree=3):
         if j<4 and nu<4:
             print(nu,j)
             print(DPi2[j,:,nu-3]) # test pour verifier les  matrices de contraintes. 
-        der3_array=Dpi2[:,0,:]/3
-    return List_Bsplines, DPi2, con_array, der3_array
+        
+    return List_Bsplines, DPi2, con_array
 
 
 def SplineCubicQuantBspkn3(xtab, ytab, knots, tau, monot, cv, weight=None):
@@ -288,7 +287,7 @@ def test():
         knots=t_k_n.copy()
         fig, axes = plt.subplots(1, 2, figsize=(15, 4))
     # Appel de la fonction
-    monot=[0]*kn
+    monot=[1]*kn
     cv=[0]*(kn+1)   
     for k in range(kn):
         if k/kn<4:
