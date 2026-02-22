@@ -1,4 +1,4 @@
-%% setting 1%%
+%% setting %%
 
 clear;
 a=cvx_solver;
@@ -338,3 +338,4 @@ DDfit_stat_std=[std(DDfit_total,0,3)]
 
 
 t0=clock-t0;
+
