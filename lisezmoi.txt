@@ -44,7 +44,7 @@ python3 Quantregtk.py
 
     ✅ Régression quantile avec splines de degré 1 à 4
 
-    ✅ Contraintes sur les dérivées (implémentées théoriquement sur tout l'intervalle)
+    ✅ Contraintes sur les dérivées (valables sur tout l'intervalle ou des régions choisies, pas uniquement aux noeuds)
 
     ✅ Interface graphique pour tests interactifs
 
