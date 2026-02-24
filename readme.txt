@@ -36,7 +36,7 @@ SplineLinQuantBspkn1_V1.py    Linear splines with constraints on first derivativ
 ## Quick start
 
 # Example of using a file
-python3 SplineCubicQuantBspkn3__V2_der3.py
+python3 SplineCubicQuantBspkn3_V2_der3.py
 # Example of global use
 python3 Quantregtk.py
 
