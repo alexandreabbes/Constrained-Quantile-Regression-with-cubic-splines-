@@ -1,3 +1,14 @@
+#!/usr/bin/env python
+
+__author__ = "Alexandre Abbes"
+__copyright__ = "Copyright 2026, Alexandre Adel Abbes"
+__credits__ = ["Alexandre Abbes"]
+__license__ = "GPL"
+__version__ = "1.0.1"
+__maintainer__ = "Alexandre Abbes"
+__email__ = "alexandre.abbes@proton.me"
+
+
 import numpy as np
 import cvxpy as cp
 from scipy.interpolate import BSpline, PPoly
