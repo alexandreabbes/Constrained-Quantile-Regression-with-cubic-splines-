@@ -1,11 +1,24 @@
-File						Comment
+File						                      Comment
 
-SplineCubicQuantBspkn3_V2_OK.py			python version of the quantile r						egression with cubic splines wit						h test
+For use, these are the python libray needed to execute the following programs:
 
-SplineCubicQuantBspkn3__V2_der3.py		python version of preceding,   							implementing constraints on the 						3rd  derivative
+ pandas
+ numpy
+ scipy
+ matplotlib
+ cvxpy  # this is a python version of cvx library used in the matlab version of this method.
 
-Test_temp.py					test on temperature identical to						the test in the article, but 							implemented with python
+
+
+****Quant_reg_tk.py**** Nice graphical interface writen in tkinter (python) for testing the following codes.
+
+######## All of the following python programs are standalone codes, and have a small test included #####
+
+****SplineCubicQuantBspkn3__V2_der3.py****		python version of quantile regression with cubic splines under constraints,	including constraints on the 1st, 2cd, 3rd  derivatives, as described in the article.
+****SplineQuarticQuantBspkn4_V3.py****        python version of quantile regression with quartic splines under constraints,	including constraints on the 1st, 2cd, 3rd  derivatives. Constraints are implemented as theoreticaly exact contraints on the whole interval, (not only at the knots), in the same way as with cubic splines, described in the article. 
+****SplineQuadQuantBspkn2_V1.py**** python version of quantile regression with quadratic splines under constraints,	including constraints on the 1st, and 2cd derivatives.
+****SplineLinQuantBspkn1_V1.py**** python version of quantile regression with quadratic splines under constraints,	including constraints on the 1st derivative.
+
+Test_temp.py					test on temperature identical to the test in the article (cubic splines), but implemented with python
 
 temp.xls					data set of global temperatures
-
-SplineQuarticQuantBspkn4_V2_OK.py		Quantile Regression under constrints with quartic splines. 			
