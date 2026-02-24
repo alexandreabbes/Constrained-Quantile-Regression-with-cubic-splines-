@@ -11,6 +11,9 @@ l'article  "Quantile regression with cubic splines under shape constraints" par 
 ```bash
 pip install pandas numpy scipy warnings matplotlib cvxpy
 
+###Installation
+#copier tous les fichiers dans un meme repertoire. 
+
 
 ### Structure des fichiers
 #Interface graphique
@@ -28,9 +31,14 @@ SplineLinQuantBspkn1_V1.py	Splines linéaires avec contraintes sur dérivée 1è
 #Exemples et données
     Test_temp.py - Réplication du test sur les températures globales (données dans temp.xls)
 
+
+
 ## Utilisation rapide
 # Exemple d'utilisation d'un fichier
 python3 SplineCubicQuantBspkn3__V2_der3.py
+# Exemple d'utilisation globale
+python3 Quantregtk.py
+
 
  Fonctionnalités
 
