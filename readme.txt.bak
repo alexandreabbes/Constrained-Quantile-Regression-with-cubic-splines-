@@ -9,13 +9,13 @@
 
 #File						                       Comment
 
-****Quant_reg_tk.py****           Nice graphical interface writen in tkinter (python) for testing the following codes.
+****Quant_reg_tk.py****           Nice graphical interface writen in tkinter (python) for testing the following codes. It allows to chose the degree of the splines, the knots, and the type of constrains (1st, 2cd, 3ced derivative) global on the whole interval, or on designed regions. 
 
 ######## All of the following python programs are standalone codes, and have a small test included #####
 ################################
 ****SplineCubicQuantBspkn3__V2_der3.py****		python version of quantile regression with cubic splines under constraints,	including constraints on the 1st, 2cd, 3rd  derivatives, as described in the article.
 ****SplineQuarticQuantBspkn4_V3.py****        python version of quantile regression with quartic splines under constraints,	including constraints on the 1st, 2cd, 3rd  derivatives. Constraints are implemented as theoreticaly exact contraints on the whole interval, (not only at the knots), in the same way as with cubic splines, described in the article. 
 ****SplineQuadQuantBspkn2_V1.py**** python version of quantile regression with quadratic splines under constraints,	including constraints on the 1st, and 2cd derivatives.
-****SplineLinQuantBspkn1_V1.py**** python version of quantile regression with quadratic splines under constraints,	including constraints on the 1st derivative.
+****SplineLinQuantBspkn1_V1.py**** python version of quantile regression with linear splines under constraints,	including constraints on the 1st derivative.
 ###############################
 ****Test_temp.py****					test on temperature identical to the test in the article (cubic splines), but implemented with python. "temp.xls"=data set of global temperatures
