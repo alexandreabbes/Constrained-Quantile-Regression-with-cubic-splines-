@@ -53,6 +53,11 @@ python3 Quantregtk.py
 
 ### Licence
 MIT License - voir le fichier LICENSE pour plus de détails
+Citation
+
+### Citation
+# Si vous utilisez ce code dans vos recherches, veuillez citer:
+ABBES, A. (2025). Quantile regression with cubic polynomial splines under shape constraints with applications. https://doi.org/10.5281/zenodo.16999785
 
 ### Contributions
 #Les contributions sont les bienvenues! N'hésitez pas à:
@@ -62,3 +67,15 @@ MIT License - voir le fichier LICENSE pour plus de détails
     Proposer une pull request
 
     Suggérer des améliorations
+
+
+###  Assistance IA
+
+#Ce projet a été réalisé avec le concours de DeepSeek (https://deepseek.com/), qui a assisté le développeur dans :
+- L'implémentation des algorithmes de splines contraintes depuis matlab vers python
+- La traduction des concepts mathématiques en code Python
+- La structuration des programmes et la documentation
+
+DeepSeek est un modèle de langage développé par 深度求索 [1].
+
+[1] DeepSeek-AI. (2024). DeepSeek-V3 Technical Report. arXiv:2412.19437.
