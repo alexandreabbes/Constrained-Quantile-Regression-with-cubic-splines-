@@ -34,10 +34,7 @@ SplineLinQuantBspkn1_V1.py    Linear splines with constraints on first derivativ
 
 
 ## Quick start
-# Example
 
-Translated with DeepL.com (free version)
-## Quick use
 # Example of using a file
 python3 SplineCubicQuantBspkn3__V2_der3.py
 # Example of global use
@@ -48,7 +45,7 @@ python3 Quantregtk.py
 
     ✅ Quantile regression with splines of degree 1 to 4
 
-    ✅ Constraints on derivatives (theoretically implemented over the entire interval)
+    ✅ Constraints on derivatives (valid over the entire interval or selected regions, not just at nodes)
 
     ✅ Graphical interface for interactive testing
 
@@ -57,6 +54,11 @@ python3 Quantregtk.py
 
 ### Licence
 MIT Licence - see the LICENCE file for more details
+Citation
+
+### Citation
+# If you use this code in your research, please cite:
+ABBES, A. (2025). Quantile regression with cubic polynomial splines under shape constraints with applications. https://doi.org/10.5281/zenodo.16999785
 
 ### Contributions
 #Contributions are welcome! Feel free to:
@@ -67,4 +69,14 @@ MIT Licence - see the LICENCE file for more details
 
     Suggest improvements
 
-Translated with DeepL.com (free version)
+
+###  AI assistance
+
+#This project was carried out with the assistance of DeepSeek (https://deepseek.com/), which helped the developer with:
+- Implementing constrained spline algorithms from Matlab to Python
+- Translating mathematical concepts into Python code
+- Structuring programmes and documentation
+
+DeepSeek is a language model developed by 深度求索 [1].
+
+[1] DeepSeek-AI. (2024). DeepSeek-V3 Technical Report. arXiv:2412.19437.
