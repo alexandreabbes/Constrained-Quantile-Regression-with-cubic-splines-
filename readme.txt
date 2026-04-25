@@ -16,10 +16,11 @@ pracma
 Some functions in thses R library have incolerences. See the file Bug_polynomial.txt
 
 ### First use:
-copy the files PPèspline2.R and the main file SplineCubicQuantBspkn3_Kar_V10.2.R
+Copy the files PPèspline2.R and the main file SplineCubicQuantBspkn3_Kar_V10.2.R
 in a directory.
 First execute the code PP-spline2.R (for the calculation of the bspline basis coefficients)
 then run the main code to see the little demo.
+You shoul see the same as : Contained_quantile_reg_Bspline_test_R.png
 
 Feel free to modify the constrains, the function, the noisy part, and the tau. 
 
