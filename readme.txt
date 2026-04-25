@@ -25,6 +25,3 @@ ABBES, A. (2025). Quantile regression with cubic polynomial splines under shape 
     Submit a pull request
 
     Suggest improvements
-
-
-[1] DeepSeek-AI. (2024). DeepSeek-V3 Technical Report. arXiv:2412.19437.
