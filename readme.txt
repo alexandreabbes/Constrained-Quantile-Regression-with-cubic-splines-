@@ -8,12 +8,14 @@ Set of programmes for quantile regression with constrained splines, based on
 the article  ‘Quantile regression with cubic splines under shape constraints’ by Alexandree Abbes,  https://zenodo.org/records/16999785. 
 
 ### Prerequisites : install first the cvxR library
-splines
-splines2
-fda
-pracma
 
-Some functions in thses R library have incolerences. See the file Bug_polynomial.txt
+library(CVXR)
+library(splines)
+library(splines2)
+library(fda)
+library(pracma)
+
+⚠️ Known issues: Several functions in the above libraries have inconsistencies. Refer to Bug_polynomial.txt for documentation. The necessary corrections and reimplementations are included in this package.
 
 ### First use:
 Copy the files PPèspline2.R and the main file SplineCubicQuantBspkn3_Kar_V10.2.R
