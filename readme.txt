@@ -8,6 +8,21 @@ Set of programmes for quantile regression with constrained splines, based on
 the article  ‘Quantile regression with cubic splines under shape constraints’ by Alexandree Abbes,  https://zenodo.org/records/16999785. 
 
 ### Prerequisites : install first the cvxR library
+splines
+splines2
+fda
+pracma
+
+Some functions in thses R library have incolerences. See the file Bug_polynomial.txt
+
+### First use:
+copy the files PPèspline2.R and the main file SplineCubicQuantBspkn3_Kar_V10.2.R
+in a directory.
+First execute the code PP-spline2.R (for the calculation of the bspline basis coefficients)
+then run the main code to see the little demo.
+
+Feel free to modify the constrains, the function, the noisy part, and the tau. 
+
 
 ### Licence
 MIT Licence - see the LICENCE file for more details
