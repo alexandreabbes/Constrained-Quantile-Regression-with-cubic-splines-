@@ -16,6 +16,10 @@ library(fda)
 library(pracma)
 
 ⚠️ Known issues: Several functions in the above libraries have inconsistencies. Refer to Bug_polynomial.txt for documentation. The necessary corrections and reimplementations are included in this package.
+⚠️ THE CONVENTION FOR POLYNOMIAL IS NOT THE STANDARD ONE:
+#FOR ALL THE FUNCTIONS HERE p0+p1x+p2x^2  <-> c(p0,P1,p2)
+#THUS ALL POLYNOMIAL OPERATIONS FOLLOW THIS CONVENTION AND HAVE BEEN RE-WRITTEN
+
 
 ### First use:
 Copy the files PPèspline2.R and the main file SplineCubicQuantBspkn3_Kar_V10.2.R
