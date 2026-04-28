@@ -7,9 +7,10 @@ library(pracma)
 
 #Monotonicity and convexity constraints OK
 #Version 2, 24/04/2026
-#Code in R, similar to the python version, but the Bspline basis functions have
-#been rewriten.
-
+#Code in R, similar to the python version, but the Bspline basis 
+#and polynomial functions 
+#have all been rewriten.
+#The convention for polynomial is; p0+p1x+p2x^2  <-> c(p0,P1,p2)
 
 # Fonction de perte quantile. Non utilisee
 rhotau <- function(u, tau) {
@@ -58,6 +59,7 @@ bspline_to_deriv_coeffs_pp <- function(tn,degree = 3) {
       deriv_coeffs[nu-degree,j,]=c(a3,a2,a1)
       deriv2_val[nu-degree,j]=c1
     }
+
     # for the last knot the second deriv is an affine function
     # c1+c2(t-t_{kn-1}) h is the last intervall space
     c2=6*basis[j,nu,4]
