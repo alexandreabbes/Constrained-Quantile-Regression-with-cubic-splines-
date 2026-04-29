@@ -319,9 +319,9 @@ evalpp<-function(p,xvalues){
     h=xval-tn[i]
     pval<-c(pval,poly_eval(poly_loc,h))
   }
-  xval=xvalues[(xvalues>tn[kn-1]) & (xvalues<=tn[kn])]
+  xval=xvalues[xvalues=tn[kn]]
   #pval=c(pval,polyval(p=rev(poly_loc),xval)) #if use of R convention
-  h=xval-tn[kn-1]
+  h=tn[kn]-tn[kn-1]
   pval=c(pval,poly_eval(poly_loc,h)) #use our convention for polynomial
   return(pval)
 }
@@ -347,7 +347,7 @@ view_spline<-function(Bspline,xvalues)
   #Bspline est un type ad-hoc avec les 
   #coefficients, les noeuds, le degré.
    yvalues=bs_direct(Bspline,xvalues)
-   matplot(xvalues, yvalues)
+   matplot(xvalues, t(yvalues))
 }
 
 
@@ -356,8 +356,8 @@ test_bsplines<-function()
   sn<-c(0,0,0,0,1,2,3,4,5,5,5,5)
   tn=c(0,1,2,3,4,5)
   BB<-Bspline_base(sn,degree = 3)
-  #x=linspace(0,4,100)
-  x=tn
+  x=linspace(0,5,100)
+  #x=tn
   y=bs_direct(BB,x)
   ybs=bs(x=x,knots=tn)
   #ykn=Spline_der_knots(BB,der=0)
