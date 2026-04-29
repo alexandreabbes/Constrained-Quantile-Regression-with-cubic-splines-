@@ -1,8 +1,8 @@
 # Chargement des librairies nécessaires
 library(CVXR)
-library(splines)
-library(splines2)
-library(fda)      # Pour les B-splines
+#library(splines)
+#library(splines2)
+#library(fda)      # Pour les B-splines
 library(pracma)
 
 #Monotonicity and convexity constraints OK
@@ -20,7 +20,7 @@ rhotau <- function(u, tau) {
 #' Convertit une B-spline en représentation polynomiale 
 #' par morceaux en appelant la fontion Bspline_base
 
-bspline_to_deriv_coeffs_pp <- function(tn,degree = 3) {
+bspline_to_deriv_coeffs_pp <- function(tn,degree = 3,xvalues=0) {
   
   # Créer la base avec create.bspline.basis
   kn <- length(tn) - 1
@@ -65,8 +65,9 @@ bspline_to_deriv_coeffs_pp <- function(tn,degree = 3) {
     c2=6*basis[j,nu,4]
     deriv2_val[nu-degree+1,j]=c1+c2*h
 }
-
-  return(list(d1=deriv_coeffs, d2=deriv2_val))
+    if (length(xvalues)!=1){yvalues=bs_direct(BB,xvalues)}
+  else {yvalues=0}
+  return(list(d0=yvalues,d1=deriv_coeffs, d2=deriv2_val))
 }
 
 
@@ -128,19 +129,21 @@ SplineCubicQuantBspkn3_Karlin <- function(xtab, ytab, knots, tau,
   boundary_knots <- range(knots)
   degree=3
   N=length(knots)+3-1
-  B <- bs(xtab, knots = knots, degree = degree)
+  #B <- bs(xtab, knots = knots, degree = degree)
+  #B=B[,1:N]
+  
   #        Boundary.knots = boundary_knots, intercept = TRUE)
   #kn=length(knots)-1
   #N <- kn+degree
-
   int_knots=knots[2:kn]
-  D2B=dbs(x=knots,derivs=2,knots=int_knots, degree = 3, Boundary.knots = range(knots))
-  #cat("Nombre de fonctions de base:", N, "\n")
-  B=B[,1:N]
+    #cat("Nombre de fonctions de base:", N, "\n")
+  
   # Calcul des coefficients normalisés des dérivées avec fda
-  deriv_spline <- bspline_to_deriv_coeffs_pp(knots, degree = 3)
+  deriv_spline <- bspline_to_deriv_coeffs_pp(knots, degree = 3,xvalues=xtab)
   deriv_coeffs <-deriv_spline$d1
   deriv_coeffs2<-deriv_spline$d2
+  B<-deriv_spline$d0
+  B=t(B)
   y_mean <- mean(ytab)
   ytab_centered <- ytab - y_mean
   
