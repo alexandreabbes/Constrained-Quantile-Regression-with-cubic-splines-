@@ -28,6 +28,28 @@ First execute the code PP-spline2.R (for the calculation of the bspline basis co
 then run the main code to see the little demo.
 You shoul see the same as : Contained_quantile_reg_Bspline_test_R.png
 
+###list of available functions:
+SplineCubicQuantBspkn3 : main function
+Omega
+polymul
+polyadd
+change_polynomial_base_taylor
+Bspline_base
+polyderiv
+Bspline_deriv
+poly_eval
+Spline_der_knots
+spline_eval
+bs_direct
+evalpp
+makpp
+view_spline
+test_bsplines
+
+
+
+
+
 Feel free to modify the constrains, the function, the noisy part, and the tau. 
 
 
