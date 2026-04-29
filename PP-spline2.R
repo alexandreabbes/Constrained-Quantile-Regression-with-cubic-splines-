@@ -361,6 +361,9 @@ test_bsplines<-function()
   y=bs_direct(BB,x)
   ybs=bs(x=x,knots=tn)
   #ykn=Spline_der_knots(BB,der=0)
-  return(list(y=y,ybs=ybs))
+  A=(round(y-t(ybs[,1:8]),9))
+  print(A)
+  print("les matrices de valeurs sont identiques à 10^(-9) près")
+  return(list(y=y,ybs=ybs,A))
 }
 
