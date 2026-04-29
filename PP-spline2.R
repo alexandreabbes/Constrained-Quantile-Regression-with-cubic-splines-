@@ -1,5 +1,5 @@
 library(pracma)
-library(polynom)
+#library(polynom)
 library(splines)
 
 #Note that all this has been written with
@@ -17,6 +17,8 @@ library(splines)
 #polyder(as.polynomial(c(1,2,3))) 
 #[1] 2 2 (instead of [2,6] )
 #keeping the standard convention
+#moreover the pracma polyder fucntion has a severe bug
+
 
 Omega<-function(s,j,l,k=j)#t: knots in the base t-t[j]
     {
@@ -170,27 +172,18 @@ Bspline_base<-function(sn,degree=3,der=0)
 }
 
 
-polyderiv<-function(p,der=1) # this is a working polyder function, 
+polyderiv<-function(p,der=1) # this is a working equivalent to polyder function, 
   #because the order higher than 1 do not work  in the R function polyder
-
-{if (der==0)
-  {return(p)}
-else{
- q=rev(p) #reverse the coefficient in order
- #to match the R convention of coefficients p=c(a3,a2,a1,a0) for a0+a1x+a2x^2+a3x^3...
- l=length(p)
- dl=l-der
-  for (i in 1:der)
-    {
-  q=polyder(q)
-  }
-
-if (length(q)==1){
-if ((l-der)>0 & (q==0)){
-  q<-c(zeros(1,l-der))
-  }}
-return(rev(q)) # reverse back to match our own convention
- #(python style) with coefficients (a0,a1,a2,a3)
+{
+  if (der==0)   {return(p)}
+  else {
+  l=length(p)
+   A=zeros(l,l)
+ for (i in 1:(l-1)){A[i,i+1]=i}
+ D=A
+ if (der>1){for (i in 2:der){D=A%*%D}} #compute the d-th power of A
+ q=D%*%p
+return(q) # reverse back to match our own convention
 }
 }
 
@@ -317,16 +310,19 @@ evalpp<-function(p,xvalues){
   n=length(xvalues)
   
   pval<-c()
-  for (i in 1:(kn-2)){
+  for (i in 1:(kn-1))
+    {
     xval=xvalues[(xvalues>=tn[i]) & (xvalues<tn[i+1])]
     poly_loc<-coeff[i,]
     # reverse our convention to match polyval convention
     #pval<-c(pval,polyval(p=rev(poly_loc),xval) )
-    pval<-c(pval,poly_eval(poly_loc,xval))
+    h=xval-tn[i]
+    pval<-c(pval,poly_eval(poly_loc,h))
   }
-  xval=xvalues[(xvalues>=tn[kn-1]) & (xvalues<=tn[kn])]
+  xval=xvalues[(xvalues>tn[kn-1]) & (xvalues<=tn[kn])]
   #pval=c(pval,polyval(p=rev(poly_loc),xval)) #if use of R convention
-  pval=c(pval,poly_eval(poly_loc,xval)) #use our convention for polynomial
+  h=xval-tn[kn-1]
+  pval=c(pval,poly_eval(poly_loc,h)) #use our convention for polynomial
   return(pval)
 }
 
@@ -341,7 +337,7 @@ makpp<-function(coef,tn){
     break
   }
   else{
-    return(list(coefficients=coef,knots=tn))
+    return(list(coefficients=(coef),knots=tn))
      }
 }
 
@@ -364,7 +360,7 @@ test_bsplines<-function()
   x=tn
   y=bs_direct(BB,x)
   ybs=bs(x=x,knots=tn)
-  ykn=Spline_der_knots(BB,der=0)
+  #ykn=Spline_der_knots(BB,der=0)
   return(list(y=y,ybs=ybs))
 }
 
