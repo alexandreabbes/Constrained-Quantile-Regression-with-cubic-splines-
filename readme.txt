@@ -10,12 +10,9 @@ the article  ‘Quantile regression with cubic splines under shape constraints�
 ### Prerequisites : install first the cvxR library
 
 library(CVXR)
-library(splines)
-library(splines2)
-library(fda)
 library(pracma)
 
-⚠️ Known issues: Several functions in the above libraries have inconsistencies. Refer to Bug_polynomial.txt for documentation. The necessary corrections and reimplementations are included in this package.
+⚠️ Known issues: Several functions in the  libraries pracma have inconsistencies. Refer to Bug_polynomial.txt for documentation. The necessary corrections and reimplementations are included in this package.
 ⚠️ THE CONVENTION FOR POLYNOMIAL IS NOT THE STANDARD ONE:
 #FOR ALL THE FUNCTIONS HERE p0+p1x+p2x^2  <-> c(p0,P1,p2)
 #THUS ALL POLYNOMIAL OPERATIONS FOLLOW THIS CONVENTION AND HAVE BEEN RE-WRITTEN
