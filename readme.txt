@@ -11,11 +11,14 @@ the article  ‘Quantile regression with cubic splines under shape constraints�
 
 library(CVXR)
 library(pracma)
-
+library(spline) #only for the comarison test test_bspline() in the file PP_spline2.R
 ⚠️ Known issues: Several functions in the  libraries pracma have inconsistencies. Refer to Bug_polynomial.txt for documentation. The necessary corrections and reimplementations are included in this package.
+The bs() function of the R library spline , calculating the B-spline basis values at given x, gives the same results our function bs_direct(). see the test_bspline() function.
+
 ⚠️ THE CONVENTION FOR POLYNOMIAL IS NOT THE STANDARD ONE:
 #FOR ALL THE FUNCTIONS HERE p0+p1x+p2x^2  <-> c(p0,P1,p2)
 #THUS ALL POLYNOMIAL OPERATIONS FOLLOW THIS CONVENTION AND HAVE BEEN RE-WRITTEN
+
 
 
 ### First use:
