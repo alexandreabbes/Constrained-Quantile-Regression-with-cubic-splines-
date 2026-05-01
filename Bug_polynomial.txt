@@ -1,6 +1,6 @@
 I have no time to study all the bugs in R concerning the splines and polynomial
 
-Here are some functons that give inconsistent results. For most functions,
+Here are some functons of library pracma that give inconsistent results. For most functions,
 as polyder, mkpp, ppeval,
 the R convention to handle c(a3,a2,a1,a0) as a  polynomial
 is a0+a1x+a2x^2+a2x^3
@@ -10,17 +10,15 @@ So far, the polyder function is bugged, and the derivative or order greater that
 polyder(c(1,2,3))
 [1] 2 2
 
-the function  as.polynomial(c(3,2,1)) answers
+The convention of decreasing order representation is in contradiction with library polynomial.
+as.polynomial(c(1,2,3)) answers
 1 + 2*x + 3*x^2
 
-And:
+And moreover:
 polyder(as.polynomial(c(1,2,3)))
 [1] 2 2
-
-so that we also have
-
 as.polynomial(polyder(as.polynomial(c(1,2,3))))
 2 + 2*x
-
+instead of 2+6*x
 
 Many function concerning B-splines give strange results, so that I avoided using them, and had to rewrite most of them, wich wasted me a lot of time. 
