@@ -1,14 +1,15 @@
-I have no time to study all the bugs in R concerning the splines and polynomial
+Some inconsistensies concerning polynomial in R
 
-Here are some functons of library pracma that give inconsistent results. For most functions,
+polyder of  library pracma and as.polynomial of library polynom are inconsistent.
+
+For most functions,
 as polyder, mkpp, ppeval,
 the R convention to handle c(a3,a2,a1,a0) as a  polynomial
 is a0+a1x+a2x^2+a2x^3
 
-So far, the polyder function is bugged, and the derivative or order greater that 1 has a big bug. 
-
 polyder(c(1,2,3))
 [1] 2 2
+
 
 The convention of decreasing order representation is in contradiction with library polynomial.
 as.polynomial(c(1,2,3)) answers
@@ -20,5 +21,3 @@ polyder(as.polynomial(c(1,2,3)))
 as.polynomial(polyder(as.polynomial(c(1,2,3))))
 2 + 2*x
 instead of 2+6*x
-
-Many function concerning B-splines give strange results, so that I avoided using them, and had to rewrite most of them, wich wasted me a lot of time. 
