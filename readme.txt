@@ -4,7 +4,7 @@
 [![Python 3.6+](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/downloads/)
 
 Set of programmes for quantile regression with constrained splines, based on
-the article  ‘Quantile regression with cubic splines under shape constraints’ by Alexandree Abbes,  https://zenodo.org/records/16999785. 
+the article  ‘Quantile regression with cubic splines under shape constraints’ by Alexandree Abbes,  https://doi.org/10.5281/zenodo.17427913 
 
 ### Prerequisites (the cvxpy library is more difficult to install)
 
@@ -58,7 +58,7 @@ Citation
 
 ### Citation
 # If you use this code in your research, please cite:
-ABBES, A. (2025). Quantile regression with cubic polynomial splines under shape constraints with applications. https://doi.org/10.5281/zenodo.16999785
+ABBES, A. (2025). Quantile regression with cubic polynomial splines under shape constraints with applications. https://doi.org/10.5281/zenodo.17427913
 
 ### Contributions
 #Contributions are welcome! Feel free to:
