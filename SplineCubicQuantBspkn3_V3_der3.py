@@ -66,7 +66,6 @@ def build_bsplines_and_deriv(knots,degree=3):
         con_array[:, j] = spline_j_der2(knots)
         
     for nu in range(3,N):
-        
       t_k, t_k1 = s[nu],s[nu+1]
       print(nu,s[nu], s[nu+1])
       h = t_k1 - t_k
@@ -310,8 +309,8 @@ def test():
     cv=[0]*(kn+1)
     der3=0
     for k in range(kn):
-        if k<4:
-            monot[k]=0
+        if k<6:
+            monot[k]=1
         else:
             cv[k]=0
     #monot=1      

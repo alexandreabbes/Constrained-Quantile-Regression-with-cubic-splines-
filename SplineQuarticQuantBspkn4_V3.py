@@ -340,9 +340,9 @@ def SplineQuantBspkn4_with_der3(xtab, ytab, knots, tau, monot, cv, d3=None, solv
             constraints.extend(lin_constraints)
     
     # Contraintes de convexité aux nœuds
-    for j in range(kn + 1):
-        if cv_knots[j] != 0:
-            constraints.append(cv_knots[j] * (con_array[j, :] @ alpha) >= 0)
+    #for j in range(kn + 1):
+    #    if cv_knots[j] != 0:
+    #        constraints.append(cv_knots[j] * (con_array[j, :] @ alpha) >= 0)
     
     # Résolution
     prob = cp.Problem(objective, constraints)
@@ -377,8 +377,8 @@ def test_spline_degree4_with_der3():
     
     # Données de test
     xtab = np.linspace(0, 1, n_points)
-    #ytab = 2*xtab + 0.2*np.sin(10*np.pi*xtab) + 0.05*np.random.randn(n_points)
-    ytab=xtab**3-xtab**4
+    ytab = 2*xtab + 0.2*np.sin(10*np.pi*xtab) + 0.05*np.random.randn(n_points)
+    #ytab=xtab**3-xtab**4
     kn = 8
     knots = kn + 1
     knots = np.quantile(xtab, np.linspace(0, 1, kn + 1))

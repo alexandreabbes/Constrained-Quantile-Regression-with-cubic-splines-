@@ -9,7 +9,7 @@ import mosek
 
 import pandas as ps
 
-from SplineCubicQuantBspkn3_V2_OK import *
+from SplineCubicQuantBspkn3_V3_der3 import *
 
 temp=ps.read_excel('temp.xls')
 temp_val=temp.values
